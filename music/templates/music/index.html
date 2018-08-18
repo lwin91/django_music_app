@@ -1,0 +1,17 @@
+<ul>
+    {% for song in songs %}
+        <li><a href="{% url 'polls:detail' song.id %}">Details</a> - {{ song.title }}
+        	<br>
+        <li><a href="/music/{{ song.id }}/view/">View</a> - {{ song.youtube_link }}</li>
+    {% endfor %}
+    <hr>
+    {% for t in total_view_counts %}
+        <li><h3>{{ t.time }} : {{ t.length }} views  = {{ t.profit }} €</h3></li>
+    {% endfor %}
+    <hr>
+    {% for t in all_songs %}
+        <li><h3>{{ t.song_name }} : {{ t.length }} views = {{ t.profit }} €</h3></li>
+    {% endfor %}
+    <h3>Forecast for the month : <i>{{ forecast_for_month }}</i> = {{profit_for_month}} €</h3>
+</ul>
+

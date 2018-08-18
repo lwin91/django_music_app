@@ -1,0 +1,10 @@
+<ul>
+    <h1>total views = {{ total_views }}</h1>
+    <hr>
+    <h2>views per days</h2>
+    {% for t in total_view_counts %}
+        <li><h3>{{ t.time }} : {{ t.length }} views </h3></li>
+    {% endfor %}
+    
+</ul>
+
